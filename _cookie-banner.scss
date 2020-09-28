@@ -1,0 +1,21 @@
+$fg-cookie-banner-background-color: #ccc !default;
+$fg-cookie-banner-width: 80% !default;
+
+.fg-cookie-banner {
+    width: 100%;
+    background-color: $fg-cookie-banner-background-color;
+    overflow: hidden;
+    padding: 10px 0;
+    display: none;
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    &__container {
+        width: $fg-cookie-banner-width;
+        margin: 0px auto;
+    }
+}
