@@ -1,19 +1,13 @@
 {
-  "name": "fg-cookies",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "name": "@futuregov/cookie-consent",
+  "version": "0.0.2",
+  "repository": "wearefuturegov/fg-cookie-consent",
+  "description": "This is a very basic implementation of a cookie consent workflow that does not load any analytics by default then it allows you to accept cookies and load the analyctics or deny and nothing will load.",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel -p 3002 watch index.html"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "parcel-bundler": "^1.12.4"
-  },
-  "devDependencies": {
-    "sass": "^1.26.11"
-  }
+  "license": "ISC"
 }

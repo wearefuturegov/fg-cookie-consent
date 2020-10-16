@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', function (event) {
-    var cookieName = 'FGCookieConsent';
+module.exports = ({cookieName, cookieHtmlMainMessage, cookiesAcceptCookiesButtonText, cookiesRejectCookiesButtonText}, cookieCallback) => {
+
+    cookieName =  cookieName || 'FGCookieConsent';
 
     const cookieButtons = document.querySelectorAll("[data-accept-cookie]");
 
@@ -92,39 +93,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
     function loadAnalytics() {
         console.log('loadAnalytics');
-
-        var tag = document.createElement("script");
-        tag.src = "https://www.googletagmanager.com/gtag/js?id=<%= ENV[\"GTM_TRACKING_ID\"] %>";
-        document.getElementsByTagName("head")[0].appendChild(tag);
-
-
-
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
+        try {
+            cookieCallback();   
+        } catch (error) {
+            throw new Error(`You didn't include a callback function`)
         }
-        gtag('js', new Date());
-        gtag('config', '<%= ENV["GA_TRACKING_ID"] %>');
-
-
-        (function (h, o, t, j, a, r) {
-            h.hj = h.hj || function () {
-                (h.hj.q = h.hj.q || []).push(arguments)
-            };
-            h._hjSettings = {
-                hjid: 1958492,
-                hjsv: 6
-            };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script');
-            r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-
+       
     }
 
 
     checkCookie()
-});
+
+};
