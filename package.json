@@ -1,6 +1,6 @@
 {
   "name": "@futuregov/cookie-consent",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "wearefuturegov/fg-cookie-consent",
   "description": "This is a very basic implementation of a cookie consent workflow that does not load any analytics by default then it allows you to accept cookies and load the analyctics or deny and nothing will load.",
   "main": "index.js",
